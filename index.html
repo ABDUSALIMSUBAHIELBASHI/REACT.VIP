@@ -118,6 +118,7 @@
       min-height: 100vh;
       min-height: -webkit-fill-available;
     }
+    .react-page { display: contents; }
     body.lang-changing { opacity: 0.3; }
 
     .responsive-h1 { font-size: clamp(1.5rem, 5vw + 0.5rem, 3rem); line-height: 1.15; }
@@ -609,6 +610,8 @@
 </head>
 
 <body class="aurora theme-text font-sans antialiased overflow-x-hidden">
+  <div id="root"></div>
+  <template id="pageMarkup">
   <div class="stars"></div>
 
   <!-- ==================== NAVBAR ==================== -->
@@ -1315,7 +1318,8 @@
   <a href="https://chatgpt.com/s/m_6abd16584a408191adb49bf6fc2cd240" target="_blank" rel="noopener noreferrer" class="chatgpt-btn no-print" title="Chat with ChatGPT">🤖</a>
   <button id="scrollTop" aria-label="Scroll top" class="no-print fixed bottom-24 end-6 w-12 h-12 rounded-full bg-gradient-to-br from-brand-accent to-brand-accent2 text-brand-bg font-bold text-xl shadow-xl shadow-brand-accent/40 opacity-0 invisible translate-y-5 hover:-translate-y-1 hover:scale-110 z-50">↑</button>
 
-  <script>
+  </template>
+  <script type="text/plain" id="legacyScript">
     /* ============================================================
        TRANSLATIONS — Full Website Translation
     ============================================================ */
@@ -1923,5 +1927,6 @@
     });
   </script>
 
+  <script type="module" src="/src/main.jsx"></script>
 </body>
 </html>
